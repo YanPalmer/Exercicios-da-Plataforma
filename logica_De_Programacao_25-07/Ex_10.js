@@ -1,0 +1,1 @@
+// Escreva um programa que receba uma lista de números e imprima apenas os números pares.
