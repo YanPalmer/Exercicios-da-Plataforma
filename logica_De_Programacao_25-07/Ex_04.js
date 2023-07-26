@@ -9,7 +9,7 @@ function verificarIdade() {
     } else if (idade >= 18) {
         console.log("Você já tem idade de saber o que é certo e errado. Previna-se!");
     } else {
-        console.log("\nVocê digitou algum número?\n Tente novamente...");
+        console.log("\nVocê digitou algum número?\nTente novamente...");
         return verificarIdade();
     };
 }
