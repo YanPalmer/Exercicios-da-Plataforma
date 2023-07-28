@@ -1,1 +1,0 @@
-// Escreva um programa que receba uma lista de números e retorne o maior e o menor valor.
