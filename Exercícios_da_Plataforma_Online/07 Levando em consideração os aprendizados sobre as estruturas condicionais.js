@@ -20,8 +20,36 @@ Para chegar ao resultado de cada uma das opções, use o modelo em anexo.
 console.log("Programa que identifica qual o meio de transporte que o usuário está usando...");
 const prompt = require("prompt-sync")();
 
-let escolha;
+let terrestre;
+let cabeUmaPessoa;
+let ePesado;
+let temPedal;
+let usaCapacete;
 iniciar();
+function iniciar() {
+    console.log("Responda com s para (sim) e n para (não):")
+    terrestre = String(prompt("É terrestre?"));
+    cabeUmaPessoa = String(prompt("Cabe apenas uma pessoa?"));
+    ePesado = String(prompt("É pesado?"));
+    temPedal = String(prompt("Tem pedal?"));
+    usaCapacete = String(prompt("Usa capacete?"));
+    verificar();
+}
+
+function verificar() {
+    if (terrestre == "s", cabeUmaPessoa == "s", temPedal == "s") {
+        console.log(`Então o transporte escolhido foi a Bicicleta.`);
+    } else if (terrestre == "s", cabeUmaPessoa == "s", ePesado == "s") {
+        console.log(`Então o transporte escolhido foi o Trator.`);
+    } else if (terrestre == "s", temPedal == "n", usaCapacete == "s") {
+        console.log(`Então o transporte escolhido foi a Moto.`);
+    } else {
+        console.log("Você digitou algo errado. Tente novamente...");
+        iniciar();
+    };
+};
+
+/*
 function iniciar() {
     escolha = Number(prompt("Digite\n- 1 para Trator\n- 2 para Moto\n- 3 para Bicicleta: "));
 };
@@ -46,8 +74,8 @@ switch (escolha) {
         break;
 }
 
-let escolha2;
 function descobrir() {
+    let escolha2;
     console.log("Responda com s(sim) e n(não) ");
     escolha2 = prompt("É terrestre?");
     if (escolha2 == "s") {
@@ -55,18 +83,29 @@ function descobrir() {
         if (escolha2 == "s") {
             escolha2 = prompt("É pesado?");
             if (escolha2 == "s") {
-                console.log(`O valor escolhido ${escolha} é ${escolha2}`)
+                console.log(`O valor escolhido ${resultado} é um Trator`)
+            } else {
+                mensagemErro();
             }
         } else {
             escolha2 = prompt("Tem pedal?");
             if (escolha2 == "s") {
-                console.log(`O valor escolhido ${escolha} é ${escolha2}`);
+                console.log(`O valor escolhido ${resultado} é uma Moto`);
+            } else {
+                mensagemErro();
             }
         }
     } else {
         escolha2 = prompt("Usa capaçete?");
         if (escolha2 == "s") {
-            console.log(`O valor escolhido ${escolha} é ${escolha2}`);
+            console.log(`O valor escolhido ${resultado} é uma Bicicleta`);
+        } else {
+            mensagemErro();
         }
     }
 }
+
+function mensagemErro() {
+    console.log("Algo errado!")
+}
+*/
