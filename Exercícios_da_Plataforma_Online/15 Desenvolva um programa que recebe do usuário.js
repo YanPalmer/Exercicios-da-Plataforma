@@ -6,19 +6,30 @@ Caso o usuário não digite um número ou apareça um inválido no campo do ano,
 
 const prompt = require("prompt-sync")();
 
-
-
-// if (anoDeNascimento == 2021) {
-//     console.log(`Olá ${nomeCompleto}!\nVocê nasceu no ano: ${anoDeNascimento}`);
-// }
-
-try {
-    const nomeCompleto = prompt("Digite o seu nome completo: ");
-    const anoDeNascimento = parseInt(prompt("Digite o seu ano de nascimento: "));
-    if (anoDeNascimento >= 1922 && anoDeNascimento <= 2021) {
-        console.log(`Olá ${nomeCompleto}!\nVocê nasceu no ano: ${anoDeNascimento}`);
+function obterAnoNascimento() {
+    while (true) {
+        try {
+            const ano = parseInt(prompt("Digite o seu ano de nascimento entre (1922-2021): "));
+            if (ano >= 1922 && ano <= 2021) {
+                return ano;
+            } else {
+                console.log("Ano inserido é incorreto. Tente novamente.");
+            }
+        } catch (error) {
+            console.log("Ano inválido. Digite um número válido.");
+        }
     }
-} catch (error) {
-    console.error("Erro encontrado: ", error);
-    console.log("Erro encontrauu: ", error);
 }
+
+function main() {
+    const nomeCompleto = prompt("Digite seu nome completo: ");
+    const anoNascimento = obterAnoNascimento();
+
+    const anoAtual = new Date().getFullYear();
+    const idade = anoAtual - anoNascimento;
+
+    console.log(`Nome: ${nomeCompleto}`);
+    console.log(`Sua idade no ano atual é: ${idade} anos`);
+}
+
+main();
