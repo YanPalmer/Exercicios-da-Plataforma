@@ -15,3 +15,9 @@ const idades = [23, 27, 22];
 const coresFavoritas = ["Verde", "Laranja", "Azul"];
 
 console.log(`As pessoas: ${pessoas.join(", ")}\nTem as idades: ${idades.join(", ")}\ne gostam das cores: ${coresFavoritas.join(", ")}.`);
+pessoas.splice(1, 1, "Elton");
+idades.splice(1, 1, 22);
+coresFavoritas.splice(1, 1, "Preto");
+console.log();
+
+console.log(`As pessoas: ${pessoas.join(", ")}\nTem as idades: ${idades.join(", ")}\ne gostam das cores: ${coresFavoritas.join(", ")}.`);
