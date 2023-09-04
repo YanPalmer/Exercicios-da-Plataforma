@@ -29,8 +29,8 @@ class Queue {
     }
     pilha() {
         let novaPilha = [];
-        for (let i = 0; i < this.lista.length; i++) {
-            // novaPilha = this.lista.pop(i);
+        while (this.lista.length > 0) {
+            novaPilha.push(this.lista.pop());
         }
         console.log(novaPilha);
     }
