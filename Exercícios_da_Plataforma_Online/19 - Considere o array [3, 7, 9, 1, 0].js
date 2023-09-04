@@ -41,5 +41,3 @@ const novoQueue = new Queue();
 novoQueue.listar();
 novoQueue.fila();
 novoQueue.pilha();
-
-
