@@ -28,8 +28,8 @@ function Banco(conta, saldo, tipoDeConta, agencia) {
     this.deposito = function deposito(valorDepositado) {
         if (valorDepositado) {
             const saldoFinal = this.saldo + valorDepositado;
+            return console.log(`Seu saldo foi alterado para: ${saldoFinal}`);
         }
-        return console.log(`Seu saldo foi alterado para: ${saldoFinal}`);
     }
     this.saque = function saque(saque) {
         if (saque) {
@@ -39,14 +39,14 @@ function Banco(conta, saldo, tipoDeConta, agencia) {
         return console.log(`Você acaba de sacar ${saque}. Sua conta foi atualizada para ${this.saldo}`);
     }
     this.numDaConta = function numDaConta() {
-        return console.log(`Número da conta: ${this.numDaConta}`);
+        return console.log(`Número da conta: ${this.conta}`);
     }
 }
 // const meuSaldoInicial = prompt("Digite um saldo: ");
 // const meuDeposito = prompt("Digite um valor a ser depositado: ");
 // const  = prompt("Digite um saldo: ");
 
-const minhaConta = new Banco("Conta Santander", 1000, "poupança", "1234");
+const minhaConta = new Banco(8890, 1000, "poupança", "1234");
 minhaConta.buscarSaldo();
 minhaConta.deposito(200);
 minhaConta.saque(700);
